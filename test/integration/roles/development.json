@@ -1,0 +1,12 @@
+{
+  "name": "development",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Development Role",
+  "run_list": ["recipe[ruby::default]"],
+  "default_attributes": {
+    "ruby": {
+      "dependencies": ["build-essential", "libffi-dev"]
+    }
+  }
+}
