@@ -29,7 +29,16 @@ action :install do
 end
 
 action :uninstall do
+  build_path = ::File.join(new_resource.install_path, new_resource.version)
 
+  if ::File.exist? build_path
+    print "Removing Ruby #{new_resource.version}..."
+
+    directory build_path do
+      recursive true
+      action :delete
+    end
+  end
 end
 
 def print(message)

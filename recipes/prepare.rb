@@ -23,3 +23,10 @@ git node['ruby']['ruby-build']['install_path'] do
   action :sync
   notifies :run, 'execute[install ruby-build]', :immediately
 end
+
+directory node['ruby']['install_path'] do
+  owner node['ruby']['owner']
+  group node['ruby']['group']
+  mode node['ruby']['mode']
+  recursive true
+end.run_action(:create)
