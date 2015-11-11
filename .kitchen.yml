@@ -17,6 +17,3 @@ suites:
   - name: development
     run_list:
       - role[development]
-
-
-
