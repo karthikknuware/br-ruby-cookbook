@@ -28,7 +28,7 @@ Removes Ruby versions not listed in `installed_versions`.
 
 | Key | Type | Description |
 |-----|------|-------------|
-| `ruby`/`global_version` | `String` | Version selected to add `ruby` to `global_bin_path` |
+| `ruby`/`global_version` | `String` | Default version of Ruby for the system |
 | `ruby`/`global_bin_path` | `String` | Location of bin directory for `global_version` |
 | `ruby`/`installed_versions` | `Array of Strings` | List of Ruby versions to install |
 | `ruby`/`install_path` | `String` | Path to install Ruby versions |
