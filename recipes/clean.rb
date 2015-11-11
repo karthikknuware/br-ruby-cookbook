@@ -3,16 +3,15 @@
 # Recipe:: clean
 #
 
-if ::File.exist?(node['ruby']['install_path'])
-  directories = Dir.glob(::File.join(node['ruby']['install_path'], "*#{::File::Separator}"))
+if ::File.exist?(node['ruby']['path'])
+  directories = Dir.glob(::File.join(node['ruby']['path'], "*#{::File::Separator}"))
+  previous_versions = directories.map { |path| path.split('/').last }
+  versions_to_remove = previous_versions - node['ruby']['versions']
 
-  directories.each do |path|
-    version = path.split('/').last
-
-    directory path do
-      recursive true
-      action :delete
-      not_if { node['ruby']['installed_versions'].include? version }
+  versions_to_remove.each do |version|
+    ruby_version version do
+      path node['ruby']['path']
+      action :uninstall
     end
   end
 end

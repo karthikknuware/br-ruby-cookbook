@@ -11,20 +11,20 @@ end
 
 execute 'install ruby-build' do
   command node['ruby']['ruby-build']['install_command']
-  cwd node['ruby']['ruby-build']['install_path']
+  cwd node['ruby']['ruby-build']['path']
   action :nothing
 end
 
 package 'git'
 
-git node['ruby']['ruby-build']['install_path'] do
+git node['ruby']['ruby-build']['path'] do
   repository node['ruby']['ruby-build']['repository']
   revision node['ruby']['ruby-build']['revision']
   action :sync
   notifies :run, 'execute[install ruby-build]', :immediately
 end
 
-directory node['ruby']['install_path'] do
+directory node['ruby']['path'] do
   owner node['ruby']['owner']
   group node['ruby']['group']
   mode node['ruby']['mode']

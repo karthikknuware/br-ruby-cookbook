@@ -9,40 +9,25 @@ def whyrun_supported?
   true
 end
 
+def ruby_version
+  @ruby_version ||= Libraries::RubyVersion.new(root: new_resource.path, version: new_resource.version)
+end
+
 action :install do
-  build_path = ::File.join(new_resource.install_path, new_resource.version)
-  ruby_exec = ::File.join(build_path, 'bin', 'ruby')
-  global_exec = ::File.join(new_resource.global_bin_path, 'ruby')
-
-  if ::File.exist?(ruby_exec)
-    print "Ruby #{new_resource.version} is already installed."
-  else
-    print "Installing Ruby #{new_resource.version}..."
-
-    execute "ruby-build #{new_resource.version} #{build_path}" do
-      environment new_resource.build_env
-    end
-
-    link global_exec do
-      to ruby_exec
-      only_if { new_resource.globalize }
+  ruby_version.install! do |ruby_version|
+    execute ruby_version.install_command do
+      environment new_resource.env
     end
   end
 end
 
 action :uninstall do
-  build_path = ::File.join(new_resource.install_path, new_resource.version)
-
-  if ::File.exist? build_path
-    print "Removing Ruby #{new_resource.version}..."
-
-    directory build_path do
+  ruby_version.uninstall! do |ruby_version|
+    directory ruby_version.path do
       recursive true
       action :delete
     end
   end
 end
 
-def print(message)
-  puts "\n[ruby] #{message}"
-end
+
