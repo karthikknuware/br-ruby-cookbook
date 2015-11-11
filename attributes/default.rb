@@ -13,6 +13,7 @@ default['ruby'].tap do |ruby|
   ruby['mode'] = '0755'
   ruby['dependencies'] = []
   ruby['gems'] = %w[ bundler ]
+  ruby['build_env'] = {}
 end
 
 default['ruby']['ruby-build'].tap do |ruby_build|
@@ -20,5 +21,4 @@ default['ruby']['ruby-build'].tap do |ruby_build|
   ruby_build['revision'] = 'master'
   ruby_build['install_path'] = '/opt/ruby-build'
   ruby_build['install_command'] = './install.sh'
-  ruby_build['build_env'] = {}
 end

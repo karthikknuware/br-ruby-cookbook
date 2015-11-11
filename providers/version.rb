@@ -19,7 +19,9 @@ action :install do
   else
     print "Installing Ruby #{new_resource.version}..."
 
-    execute "ruby-build #{new_resource.version} #{build_path}"
+    execute "ruby-build #{new_resource.version} #{build_path}" do
+      environment new_resource.build_env
+    end
 
     link global_exec do
       to ruby_exec
