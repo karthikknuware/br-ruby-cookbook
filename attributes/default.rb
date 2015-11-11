@@ -18,5 +18,4 @@ default['ruby']['ruby-build'].tap do |ruby_build|
   ruby_build['repository'] = 'https://github.com/sstephenson/ruby-build.git'
   ruby_build['revision'] = 'master'
   ruby_build['path'] = '/opt/ruby-build'
-  ruby_build['install_command'] = './install.sh'
 end

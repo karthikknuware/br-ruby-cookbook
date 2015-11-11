@@ -10,7 +10,7 @@ node['ruby']['dependencies'].each do |name|
 end
 
 execute 'install ruby-build' do
-  command node['ruby']['ruby-build']['install_command']
+  command './install.sh'
   cwd node['ruby']['ruby-build']['path']
   action :nothing
 end

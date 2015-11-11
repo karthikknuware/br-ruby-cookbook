@@ -39,7 +39,6 @@ Removes Ruby versions not listed in `installed_versions`.
 | `ruby`/`ruby-build`/`repository` | `String` | Location of `ruby-build` repository  |
 | `ruby`/`ruby-build`/`revision` | `String` | Revision of `ruby-build` to use |
 | `ruby`/`ruby-build`/`path` | `String` | Location where `ruby-build` will be installed |
-| `ruby`/`ruby-build`/`install_command` | `String` | Command used to install `ruby-build` |
 
 [default values](attributes/default.rb)
 
