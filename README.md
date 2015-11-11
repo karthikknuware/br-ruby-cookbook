@@ -1,6 +1,6 @@
 # Ruby Cookbook
 
-Installs and manages Ruby versions.
+Installs and manages Ruby versions
 
 0. [Recipes](#recipes)
 0. [Attributes](#attributes)
