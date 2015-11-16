@@ -18,11 +18,11 @@ Prepares for Ruby installation by installing package dependencies and [ruby-buil
 
 ### ruby::install
 
-Installs Ruby versions listed in `installed_versions`.
+Installs Ruby versions listed in `versions`.
 
 ### ruby::clean
 
-Removes Ruby versions not listed in `installed_versions`.
+Removes Ruby versions not listed in `versions`.
 
 ## Attributes
 
