@@ -33,7 +33,7 @@ Removes Ruby versions not listed in `versions`.
 | `ruby`/`owner` | `String` | Owner of Ruby installation files |
 | `ruby`/`group` | `String` | Group of Ruby installation files |
 | `ruby`/`mode` | `String` | Mode of Ruby installation files |
-| `ruby`/`dependencies` | `Array of Strings` | Dependencies needed to install Ruby |
+| `ruby`/`dependencies` | `Array of Strings` | Packages needed to install Ruby |
 | `ruby`/`gems` | `Array of Strings` | Gems to install immediately after Ruby is installed |
 | `ruby`/`env` | `Hash` | Environment variables to use during Ruby install |
 | `ruby`/`ruby-build`/`repository` | `String` | Location of `ruby-build` repository  |
