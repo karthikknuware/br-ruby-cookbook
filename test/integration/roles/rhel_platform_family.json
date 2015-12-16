@@ -1,0 +1,12 @@
+{
+  "name": "rhel_platform_family",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "RHEL Platform Family",
+  "run_list": ["recipe[yum::default]"],
+  "default_attributes": {
+    "ruby": {
+      "dependencies": ["gcc", "openssl-devel", "readline-devel", "zlib-devel"]
+    }
+  }
+}

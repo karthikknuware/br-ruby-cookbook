@@ -1,11 +1,15 @@
 name              'ruby'
 version           '0.1.0'
 description       'Installs Ruby'
-long_description  'Installs Ruby'
 maintainer        'Jim Pruetting'
-maintainer_email  'jim@builtbyrobots.com'
+maintainer_email  'core-team@builtbyrobots.com'
 license           'MIT License'
-source_url        'https://github.com/builtbyrobots/ruby-cookbook'
+source_url        'https://github.com/built-by-robots/ruby-cookbook'
+
+suggests 'apt'
+suggests 'yum'
 
 supports 'ubuntu'
-
+supports 'debian'
+supports 'centos'
+supports 'redhat'

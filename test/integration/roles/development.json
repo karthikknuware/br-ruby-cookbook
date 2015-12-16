@@ -6,7 +6,7 @@
   "run_list": ["recipe[ruby::default]"],
   "default_attributes": {
     "ruby": {
-      "dependencies": ["build-essential", "libffi-dev"]
+      "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]
     }
   }
 }
