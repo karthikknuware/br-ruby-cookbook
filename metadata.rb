@@ -1,6 +1,6 @@
 name              'br_ruby'
-version           '0.3.0'
-description       'Installs Ruby'
+version           '0.4.0'
+description       'Adds and removes Ruby versions using ruby_build'
 maintainer        'Jim Pruetting'
 maintainer_email  'core-team@builtbyrobots.com'
 license           'MIT License'
