@@ -1,5 +1,5 @@
 name              'br_ruby'
-version           '0.1.0'
+version           '0.2.0'
 description       'Installs Ruby'
 maintainer        'Jim Pruetting'
 maintainer_email  'core-team@builtbyrobots.com'
