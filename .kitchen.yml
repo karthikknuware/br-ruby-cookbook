@@ -27,6 +27,6 @@ platforms:
       - role[rhel_platform_family]
 
 suites:
-  - name: development
+  - name: default
     run_list:
-      - role[development]
+      - role[test]

@@ -1,11 +1,12 @@
 {
-  "name": "development",
+  "name": "test",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "description": "Development Role",
+  "description": "Test Role",
   "run_list": ["recipe[ruby::default]"],
   "default_attributes": {
     "ruby": {
+      "path": "/opt/rubies",
       "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]
     }
   }
