@@ -9,19 +9,19 @@ Installs and manages Ruby versions
 
 ## Recipes
 
-### ruby::default
+### br_ruby::default
 
 Runs `prepare`, `install`, and `clean` recipes.
 
-### ruby::prepare
+### br_ruby::prepare
 
 Prepares for Ruby installation by installing package dependencies and [ruby-build][ruby-build].
 
-### ruby::install
+### br_ruby::install
 
 Installs Ruby versions listed in `versions`.
 
-### ruby::clean
+### br_ruby::clean
 
 Removes Ruby versions not listed in `versions`.
 
