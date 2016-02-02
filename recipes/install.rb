@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ruby
+# Cookbook Name:: br_ruby
 # Recipe:: install
 #
 

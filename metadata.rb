@@ -1,4 +1,4 @@
-name              'ruby'
+name              'br_ruby'
 version           '0.1.0'
 description       'Installs Ruby'
 maintainer        'Jim Pruetting'
