@@ -4,6 +4,7 @@ Installs and manages Ruby versions
 
 0. [Recipes](#recipes)
 0. [Attributes](#attributes)
+0. [Examples](#examples)
 0. [Maintainers](#maintainers)
 
 ## Recipes
@@ -41,6 +42,25 @@ Removes Ruby versions not listed in `versions`.
 | `ruby`/`ruby-build`/`path` | `String` | Location where `ruby-build` will be installed |
 
 [default values](attributes/default.rb)
+
+## Examples
+
+### Role
+
+```json
+{
+  "name": "example",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Example Role",
+  "run_list": ["recipe[br_ruby::default]"],
+  "default_attributes": {
+    "ruby": {
+      "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]
+    }
+  }
+}
+```
 
 ## Maintainers
 
