@@ -2,10 +2,19 @@
 
 Installs and manages Ruby versions
 
+0. [Overview](#overview)
 0. [Recipes](#recipes)
 0. [Attributes](#attributes)
 0. [Examples](#examples)
 0. [Maintainers](#maintainers)
+
+## Overview
+
+This cookbook is designed to provide consumers with a simple solution to add and remove Ruby versions from server or application nodes.
+
+Required configuration has been kept to a minimum, so the only attribute you need to provide to get started is `ruby`/`versions`.
+
+**Note:** Built by Robots is committed to maintaining a simple, robust set of cookbooks that can be used to deploy Ruby web applications in an enterprise setting. These open source projects will be humanely maintained and will not abrutly lose support. Any future transitions of ownership or deprecation will be handled with clear communication and plenty of advance notice.
 
 ## Recipes
 
