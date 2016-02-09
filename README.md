@@ -18,19 +18,19 @@ Required configuration has been kept to a minimum, so the only attribute you nee
 
 ## Recipes
 
-### br_ruby::default
+### br-ruby::default
 
 Runs `prepare`, `install`, and `clean` recipes.
 
-### br_ruby::prepare
+### br-ruby::prepare
 
 Prepares for Ruby installation by installing package dependencies and [ruby-build][ruby-build].
 
-### br_ruby::install
+### br-ruby::install
 
 Installs Ruby versions listed in `versions`.
 
-### br_ruby::clean
+### br-ruby::clean
 
 Removes Ruby versions not listed in `versions`.
 
@@ -62,7 +62,7 @@ Removes Ruby versions not listed in `versions`.
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "Example Role",
-  "run_list": ["recipe[br_ruby::default]"],
+  "run_list": ["recipe[br-ruby::default]"],
   "default_attributes": {
     "ruby": {
       "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]

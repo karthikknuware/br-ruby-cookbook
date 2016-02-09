@@ -3,7 +3,7 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "Test Role",
-  "run_list": ["recipe[br_ruby::default]"],
+  "run_list": ["recipe[br-ruby::default]"],
   "default_attributes": {
     "ruby": {
       "path": "/opt/rubies",

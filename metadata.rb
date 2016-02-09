@@ -1,4 +1,4 @@
-name              'br_ruby'
+name              'br-ruby'
 version           '0.4.2'
 description       'Adds and removes Ruby versions using ruby_build'
 maintainer        'Jim Pruetting'

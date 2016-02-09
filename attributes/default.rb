@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: br_ruby
+# Cookbook Name:: br-ruby
 # Attributes:: default
 #
 
