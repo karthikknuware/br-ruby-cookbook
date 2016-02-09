@@ -3,6 +3,8 @@
 # Resource:: version
 #
 
+resource_name :ruby_version
+
 actions :install, :uninstall
 default_action :install
 

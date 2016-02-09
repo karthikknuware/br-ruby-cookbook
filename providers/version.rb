@@ -3,6 +3,8 @@
 # Provider:: version
 #
 
+provides :ruby_version
+
 use_inline_resources
 
 def whyrun_supported?
