@@ -1,5 +1,5 @@
 name              'br_ruby'
-version           '0.4.0'
+version           '0.4.1'
 description       'Adds and removes Ruby versions using ruby_build'
 maintainer        'Jim Pruetting'
 maintainer_email  'core-team@builtbyrobots.com'
