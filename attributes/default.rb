@@ -10,7 +10,9 @@ default['ruby'].tap do |ruby|
   ruby['group'] = 'root'
   ruby['mode'] = '0755'
   ruby['dependencies'] = []
-  ruby['gems'] = %w[ bundler ]
+  ruby['gems'] = {
+    'bundler' => '>= 0'
+  }
   ruby['env'] = {}
 end
 

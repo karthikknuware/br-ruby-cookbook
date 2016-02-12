@@ -3,9 +3,10 @@ module Libraries
 
     attr_reader :root, :version
 
-    def initialize(root: nil, version: nil)
+    def initialize(root: nil, version: nil, gems: {})
       @root = root
       @version = version
+      @gems = gems
     end
 
     def install!
@@ -30,12 +31,22 @@ module Libraries
       "ruby-build #{version} #{path}"
     end
 
+    def gems
+      @gems.map do |name, version|
+        RubyGem.new(self, name, version)
+      end
+    end
+
     def exec
       ::File.join(path, 'bin', 'ruby')
     end
 
     def path
       ::File.join(root, version)
+    end
+
+    def bin_path
+      ::File.join(path, 'bin')
     end
 
     def print(message)

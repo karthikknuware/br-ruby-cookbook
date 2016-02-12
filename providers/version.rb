@@ -12,12 +12,19 @@ def whyrun_supported?
 end
 
 def ruby_version
-  @ruby_version ||= Libraries::RubyVersion.new(root: new_resource.path, version: new_resource.version)
+  @ruby_version ||= Libraries::RubyVersion.new(root: new_resource.path,
+    version: new_resource.version, gems: new_resource.gems)
 end
 
 action :install do
   ruby_version.install! do |ruby_version|
     execute ruby_version.install_command do
+      environment new_resource.env
+    end
+  end
+
+  ruby_version.gems.each do |ruby_gem|
+    execute ruby_gem.install_command do
       environment new_resource.env
     end
   end

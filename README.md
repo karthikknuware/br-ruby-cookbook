@@ -44,7 +44,7 @@ Removes Ruby versions not listed in `versions`.
 | `ruby`/`group` | `String` | Group of Ruby installation files |
 | `ruby`/`mode` | `String` | Mode of Ruby installation files |
 | `ruby`/`dependencies` | `Array of Strings` | Packages needed to install Ruby |
-| `ruby`/`gems` | `Array of Strings` | Gems to install immediately after Ruby is installed |
+| `ruby`/`gems` | `Hash` | Gems to install immediately after Ruby is installed |
 | `ruby`/`env` | `Hash` | Environment variables to use during Ruby install |
 | `ruby`/`ruby-build`/`repository` | `String` | Location of `ruby-build` repository  |
 | `ruby`/`ruby-build`/`revision` | `String` | Revision of `ruby-build` to use |
