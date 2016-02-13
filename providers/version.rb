@@ -17,6 +17,13 @@ def ruby_version
 end
 
 action :install do
+  directory new_resource.path do
+    owner new_resource.owner
+    group new_resource.group
+    mode new_resource.mode
+    recursive true
+  end
+
   ruby_version.install! do |ruby_version|
     execute ruby_version.install_command do
       environment new_resource.env
@@ -38,5 +45,3 @@ action :uninstall do
     end
   end
 end
-
-
