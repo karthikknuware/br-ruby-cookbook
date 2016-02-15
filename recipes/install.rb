@@ -5,7 +5,7 @@
 
 node['ruby']['versions'].each do |version|
   ruby_version version do
-    path node['ruby']['path']
+    install_path node['ruby']['install_path']
     env node['ruby']['env']
     gems node['ruby']['gems']
     owner node['ruby']['owner']

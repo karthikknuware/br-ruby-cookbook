@@ -11,13 +11,13 @@ end
 
 execute 'install ruby-build' do
   command './install.sh'
-  cwd node['ruby']['ruby-build']['path']
+  cwd node['ruby']['ruby-build']['install_path']
   action :nothing
 end
 
 package 'git'
 
-git node['ruby']['ruby-build']['path'] do
+git node['ruby']['ruby-build']['install_path'] do
   repository node['ruby']['ruby-build']['repository']
   revision node['ruby']['ruby-build']['revision']
   action :sync

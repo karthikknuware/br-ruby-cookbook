@@ -11,35 +11,35 @@ def whyrun_supported?
   true
 end
 
-def ruby_version
-  @ruby_version ||= Libraries::RubyVersion.new(root: new_resource.path,
+def runtime
+  @runtime ||= BR::Ruby::Runtime.new(install_path: new_resource.install_path,
     version: new_resource.version, gems: new_resource.gems)
 end
 
 action :install do
-  directory new_resource.path do
+  directory new_resource.install_path do
     owner new_resource.owner
     group new_resource.group
     mode new_resource.mode
     recursive true
   end
 
-  ruby_version.install! do |ruby_version|
-    execute ruby_version.install_command do
+  runtime.install! do |runtime|
+    execute runtime.install_command do
       environment new_resource.env
     end
   end
 
-  ruby_version.gems.each do |ruby_gem|
-    execute ruby_gem.install_command do
+  runtime.gems.each do |gem|
+    execute gem.install_command do
       environment new_resource.env
     end
   end
 end
 
 action :uninstall do
-  ruby_version.uninstall! do |ruby_version|
-    directory ruby_version.path do
+  runtime.uninstall! do |runtime|
+    directory runtime.root do
       recursive true
       action :delete
     end

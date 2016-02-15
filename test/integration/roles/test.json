@@ -6,7 +6,6 @@
   "run_list": ["recipe[br-ruby::default]"],
   "default_attributes": {
     "ruby": {
-      "path": "/opt/rubies",
       "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]
     }
   }

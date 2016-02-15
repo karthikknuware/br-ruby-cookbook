@@ -39,7 +39,7 @@ Removes Ruby versions not listed in `versions`.
 | Key | Type | Description |
 |-----|------|-------------|
 | `ruby`/`versions` | `Array of Strings` | List of Ruby versions to install |
-| `ruby`/`path` | `String` | Path to install Ruby versions |
+| `ruby`/`install_path` | `String` | Path to install Ruby versions |
 | `ruby`/`owner` | `String` | Owner of Ruby installation files |
 | `ruby`/`group` | `String` | Group of Ruby installation files |
 | `ruby`/`mode` | `String` | Mode of Ruby installation files |
@@ -48,7 +48,7 @@ Removes Ruby versions not listed in `versions`.
 | `ruby`/`env` | `Hash` | Environment variables to use during Ruby install |
 | `ruby`/`ruby-build`/`repository` | `String` | Location of `ruby-build` repository  |
 | `ruby`/`ruby-build`/`revision` | `String` | Revision of `ruby-build` to use |
-| `ruby`/`ruby-build`/`path` | `String` | Location where `ruby-build` will be installed |
+| `ruby`/`ruby-build`/`install_path` | `String` | Path to install `ruby-build` |
 
 [default values](attributes/default.rb)
 
