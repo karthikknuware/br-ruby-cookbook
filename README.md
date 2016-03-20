@@ -20,17 +20,13 @@ Required configuration has been kept to a minimum, so the only attribute you nee
 
 ### br-ruby::default
 
-Runs `prepare`, `install`, and `clean` recipes.
-
-### br-ruby::prepare
-
-Prepares for Ruby installation by installing package dependencies and [ruby-build][ruby-build].
+Runs `install` and `remove` recipes.
 
 ### br-ruby::install
 
 Installs Ruby versions listed in `versions`.
 
-### br-ruby::clean
+### br-ruby::remove
 
 Removes Ruby versions not listed in `versions`.
 
@@ -38,17 +34,12 @@ Removes Ruby versions not listed in `versions`.
 
 | Key | Type | Description |
 |-----|------|-------------|
-| `ruby`/`versions` | `Array of Strings` | List of Ruby versions to install |
-| `ruby`/`install_path` | `String` | Path to install Ruby versions |
-| `ruby`/`owner` | `String` | Owner of Ruby installation files |
-| `ruby`/`group` | `String` | Group of Ruby installation files |
-| `ruby`/`mode` | `String` | Mode of Ruby installation files |
+| `ruby`/`versions` | `Array of Strings` | List of versions to install |
+| `ruby`/`install_path` | `String` | Directory where versions are installed |
+| `ruby`/`owner` | `String` | Owner of installed files |
+| `ruby`/`group` | `String` | Group of installed files |
+| `ruby`/`mode` | `String` | Mode of installed files |
 | `ruby`/`dependencies` | `Array of Strings` | Packages needed to install Ruby |
-| `ruby`/`gems` | `Hash` | Gems to install immediately after Ruby is installed |
-| `ruby`/`env` | `Hash` | Environment variables to use during Ruby install |
-| `ruby`/`ruby-build`/`repository` | `String` | Location of `ruby-build` repository  |
-| `ruby`/`ruby-build`/`revision` | `String` | Revision of `ruby-build` to use |
-| `ruby`/`ruby-build`/`install_path` | `String` | Path to install `ruby-build` |
 
 [default values](attributes/default.rb)
 
@@ -65,7 +56,7 @@ Removes Ruby versions not listed in `versions`.
   "run_list": ["recipe[br-ruby::default]"],
   "default_attributes": {
     "ruby": {
-      "versions": ["2.2.3", "2.1.7", "2.0.0-p647"]
+      "versions": ["2.2.3", "2.1.7"]
     }
   }
 }
