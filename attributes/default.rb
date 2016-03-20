@@ -11,11 +11,13 @@ default['ruby'].tap do |ruby|
   ruby['mode'] = '0755'
   ruby['dependencies'] = []
   ruby['gems'] = { 'bundler' => '>= 0' }
-  ruby['env'] = {}
-end
-
-default['ruby']['ruby-build'].tap do |ruby_build|
-  ruby_build['repository'] = 'https://github.com/sstephenson/ruby-build.git'
-  ruby_build['revision'] = 'master'
-  ruby_build['install_path'] = '/opt/ruby-build'
+  ruby['installer'] = 'ruby_build'
+  ruby['installers'].tap do |installers|
+    installers['ruby_build'].tap do |ruby_build|
+      ruby_build['path'] = '/opt/ruby-build'
+      ruby_build['environment'] = {}
+      ruby_build['repository'] = 'https://github.com/sstephenson/ruby-build.git'
+      ruby_build['revision'] = 'master'
+    end
+  end
 end

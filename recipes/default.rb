@@ -3,6 +3,5 @@
 # Recipe:: default
 #
 
-include_recipe 'br-ruby::prepare'
 include_recipe 'br-ruby::install'
-include_recipe 'br-ruby::clean'
+include_recipe 'br-ruby::remove'

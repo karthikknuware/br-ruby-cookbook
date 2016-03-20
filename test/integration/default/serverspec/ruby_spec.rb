@@ -2,8 +2,9 @@ require 'serverspec'
 
 set :backend, :exec
 
-describe 'versions' do
-  let(:versions) { ['2.2.3', '2.1.7', '2.0.0-p647'] }
+describe 'ruby' do
+  let(:versions) { ['2.2.3', '2.1.7'] }
+  let(:gems) { ['bundler'] }
 
   it "installs versions" do
     versions.each do |version|
@@ -11,9 +12,11 @@ describe 'versions' do
     end
   end
 
-  it "installs bundler gem" do
+  it "installs gems" do
     versions.each do |version|
-      expect(command("/opt/rubies/#{version}/bin/bundler -v").stdout).to match /Bundler version/
+      gems.each do |name|
+        expect(command("/opt/rubies/#{version}/bin/#{name} -v").stdout).to match /#{name}/i
+      end
     end
   end
 end

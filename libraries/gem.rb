@@ -7,18 +7,16 @@ module BR
   module Ruby
     class Gem
 
-      attr_reader :runtime, :name, :version
+      attr_reader :name, :version, :runtime
 
-      def self.build(runtime, attributes)
-        attributes.map do |name, version|
-          new(runtime, name, version)
-        end
-      end
+      def initialize(name, version, runtime)
+        raise ArgumentError, 'name cannot be nil' unless name
+        raise ArgumentError, 'version cannot be nil' unless version
+        raise ArgumentError, 'runtime cannot be nil' unless runtime
 
-      def initialize(runtime, name, version)
-        @runtime = runtime
         @name = name
         @version = version
+        @runtime = runtime
       end
 
       def executable

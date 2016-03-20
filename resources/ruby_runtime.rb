@@ -1,17 +1,17 @@
 #
 # Cookbook Name:: br-ruby
-# Resource:: version
+# Resource:: ruby
 #
 
-resource_name :ruby_version
+resource_name :ruby_runtime
 
-actions :install, :uninstall
-default_action :install
+actions :install, :remove
 
 attribute :version, kind_of: String, name_attribute: true, required: true
 attribute :install_path, kind_of: String, default: '/opt/rubies'
-attribute :env, kind_of: Hash, default: {}
-attribute :gems, kind_of: Hash, default: {}
 attribute :owner, kind_of: String, default: 'root'
 attribute :group, kind_of: String, default: 'root'
 attribute :mode, kind_of: String, default: '0755'
+attribute :dependencies, kind_of: Array, default: []
+attribute :gems, kind_of: Hash, default: {}
+attribute :installer, kind_of: Hash, required: true

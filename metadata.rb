@@ -1,13 +1,10 @@
 name              'br-ruby'
 version           '0.4.3'
-description       'Adds and removes Ruby versions using ruby_build'
+description       'Installs and manages Ruby versions'
 maintainer        'Jim Pruetting'
 maintainer_email  'core-team@builtbyrobots.com'
 license           'MIT License'
-source_url        'https://github.com/built-by-robots/ruby-cookbook'
-
-suggests 'apt'
-suggests 'yum'
+source_url        'https://github.com/built-by-robots/br-ruby-cookbook'
 
 supports 'ubuntu'
 supports 'debian'
